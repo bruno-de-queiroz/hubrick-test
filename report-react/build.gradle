@@ -1,0 +1,21 @@
+plugins {
+    id "base"
+    id "com.moowork.node" version "1.1.1"
+}
+
+group 'io.dietary'
+version '1.0-SNAPSHOT'
+
+task webpack(type: NpmTask, dependsOn: 'npmInstall') {
+    args = ['run', 'build']
+}
+
+task runDev(type: NpmTask, dependsOn: 'npmInstall') {
+    args = ['run', 'dev']
+}
+
+
+build.dependsOn(webpack)
+clean.dependsOn(npm_cache_clean)
+
+npm_install.dependsOn(npm_cache_clean)

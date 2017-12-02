@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hubrick.iml" filepath="$PROJECT_DIR$/.idea/modules/hubrick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/report-api/report-api.iml" filepath="$PROJECT_DIR$/.idea/modules/report-api/report-api.iml" group="report-api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/report-api/report-api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/report-api/report-api_main.iml" group="report-api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/report-api/report-api_test.iml" filepath="$PROJECT_DIR$/.idea/modules/report-api/report-api_test.iml" group="report-api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/report-react/report-react.iml" filepath="$PROJECT_DIR$/.idea/modules/report-react/report-react.iml" group="report-react" />
+    </modules>
+  </component>
+</project>

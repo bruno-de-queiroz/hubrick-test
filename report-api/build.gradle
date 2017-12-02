@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
+
+group 'io.hubrick'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+mainClassName = 'io.vertx.core.Launcher'
+jar.enabled = false
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    vertx_version = '3.4.1'
+}
+
+dependencies {
+    compile "io.vertx:vertx-core:$vertx_version"
+    compile "io.vertx:vertx-web:$vertx_version"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.6'
+}
+
+shadowJar {
+    classifier = 'fat'
+    manifest {
+        attributes 'Main-Verticle': 'com.hubrick.report.ReportVerticle'
+    }
+    mergeServiceFiles {
+        include 'META-INF/crawler/io.vertx.core.spi.VerticleFactory'
+    }
+}
+
+runShadow {
+    args = ['-conf', './src/main/resources/config.json']
+}
+
+build.dependsOn(shadowJar)

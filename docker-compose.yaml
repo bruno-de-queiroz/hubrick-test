@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  api:
+    build: ./report-api
+    domainname: hubrick.io
+    hostname: api
+    ports:
+      - "3000:3000"
+
+  react:
+    build: ./report-react
+    domainname: hubrick.io
+    hostname: www
+    ports:
+      - "80:80"
